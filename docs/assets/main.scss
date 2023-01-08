@@ -1,0 +1,26 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.post-meta {
+  a:link, a:visited, a:hover, a:active {
+    color: $grey-color;
+  }
+}
+
+.post-list {
+  a:link, a:visited, a:hover, a:active {
+    color: $grey-color-dark;
+  }
+}
+
+.site-header a:hover {
+  text-decoration: none;
+}
+
+.rss-subscribe {
+  a:link, a:visited, a:hover, a:active {
+    color: $grey-color-dark;
+  }
+}
