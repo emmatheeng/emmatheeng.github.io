@@ -1,12 +1,12 @@
 title: Emma the Eng
-email: lena.emma77@gmail.com
+email: emmatheeng@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I'm Emma, a software engineer working in London.
   I blog about everything, from personal coding projects,
   working in tech and female empowerment. Nice to meet you :-)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: lenaWitterauf
+github_username: emmatheeng
 google_analytics: G-YRZS6C454V
 
 permalink: /:categories/:title/
