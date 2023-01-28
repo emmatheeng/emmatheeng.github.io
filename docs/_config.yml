@@ -8,10 +8,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: emmatheeng
 google_analytics: G-YRZS6C454V
-
-permalink: /:categories/:title/
+show_excerpts: true
+permalink: /:categories/:title:output_ext
 
 header_pages:
+  - projects/index.html
   - about.markdown
 
 # Build settings

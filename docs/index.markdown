@@ -1,6 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+list_title: "Recent Posts"
 ---
+
+Hey you! Welcome to my blog :-)
+
+Here you can find tutorials and infos for a list of projects I'm working on - for example [setting up this blog]({{ "/projects/blog_setup/index.html" | relative_url }}) using GitHub Pages, Jekyll & Minima.

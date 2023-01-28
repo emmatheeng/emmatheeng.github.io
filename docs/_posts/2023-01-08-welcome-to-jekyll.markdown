@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World!"
 date: 2023-01-08 15:30:00 +0000
-categories: update
+tags: update
 ---
 Hello World!
 
