@@ -21,7 +21,7 @@ layout: default
       {%- endif -%}
       {%- if page.tags -%}
         • {% for tag in page.tags %}
-          <a href="{{site.baseurl}}/archive/#{{tag | slugize}}">
+          <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
             <span itemprop="category" itemscope itemtype="http://schema.org/Category">
               <span class="h-card" itemprop="name">{{ tag }}</span>
             </span>
