@@ -9,6 +9,8 @@ url: "https://emmatheeng.github.io" # the base hostname & protocol for your site
 github_username: emmatheeng
 google_analytics: G-YRZS6C454V
 show_excerpts: true
+disqus:
+  shortname: emmatheeng-github-io
 
 permalink: /:categories/:title:output_ext
 
