@@ -9,11 +9,12 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: emmatheeng
 google_analytics: G-YRZS6C454V
 show_excerpts: true
+
 permalink: /:categories/:title:output_ext
 
 header_pages:
   - projects/index.html
-  - about.markdown
+  - about.html
 
 # Build settings
 theme: minima

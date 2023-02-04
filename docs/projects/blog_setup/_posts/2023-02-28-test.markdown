@@ -1,0 +1,6 @@
+---
+layout: post
+title: "Setting up your FREE Blog with GithubPages, Jekyll & Minima"
+tags: github_pages jekyll minima
+---
+Here comes a blog post explaining how to set up this blog.

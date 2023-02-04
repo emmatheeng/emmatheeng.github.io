@@ -13,6 +13,10 @@
   a:link, a:visited, a:hover, a:active {
     color: $grey-color-dark;
   }
+
+  h3 {
+    margin-bottom: 0;
+  }
 }
 
 .site-header a:hover {
@@ -29,4 +33,60 @@
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: $grey-color-light;
+}
+
+.page-content {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: auto;
+}
+
+.post-list-item {
+  display: flex;
+}
+
+.post-list-img {
+  margin: 1px 10px 0 0;
+  width: 20%;
+  height: 100px;
+  object-fit: cover;
+  img {
+    width: 100%;
+  }
+}
+
+.post-title-img {
+  img {
+    display: block;
+    margin: auto;
+  }
+  padding-bottom: $spacing-unit / 2;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+
+  img {
+    width: 50%;
+    height: auto;
+    margin: $spacing-unit / 2;
+  }
+
+  @include media-query($on-laptop) {
+    flex-flow: row-reverse nowrap;
+
+    img {
+      width: 50%;
+      margin: 0 ($spacing-unit / 2);
+    }
+  }
+
+  @include media-query($on-palm) {
+    flex-flow: column wrap;
+
+    img {
+      width: 100%;
+      margin: 0 0 ($spacing-unit / 2) 0;
+    }
+  }
 }
