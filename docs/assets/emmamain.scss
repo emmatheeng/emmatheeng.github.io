@@ -55,11 +55,14 @@
 }
 
 .post-title-img {
+  padding-bottom: $spacing-unit / 2;
   img {
+    width: 100%;
+    max-height: $content-width / 3;
+    object-fit: cover;
     display: block;
     margin: auto;
   }
-  padding-bottom: $spacing-unit / 2;
 }
 
 .about-wrapper {

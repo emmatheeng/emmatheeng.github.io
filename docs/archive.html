@@ -13,7 +13,7 @@ permalink: /archive.html
   {% assign tag_name_pretty = tag_name | replace: "_", " " | capitalize %}
   <div class="tag-list">
     <div id="#{{ tag_name | slugize }}"></div>
-    <h3 class="post-list-heading line-bottom"> {{ tag_name_pretty }} </h3>
+    <h3 class="post-list-heading line-bottom"> In #{{ tag_name }}: </h3>
     <a name="{{ tag_name | slugize }}"></a>
     <ul class="post-list">
      {% for post in site.tags[tag_name] %}
