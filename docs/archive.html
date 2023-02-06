@@ -15,7 +15,7 @@ permalink: /archive.html
     <div id="#{{ tag_name | slugize }}"></div>
     <h3 class="post-list-heading line-bottom"> In #{{ tag_name }}: </h3>
     <a name="{{ tag_name | slugize }}"></a>
-    <ul class="post-list">
+    <ul class="post-list post-list-narrow">
      {% for post in site.tags[tag_name] %}
      <li>
        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

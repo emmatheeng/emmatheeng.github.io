@@ -6,28 +6,30 @@ title: Projects
   Here you can find a list of projects & tutorials I've published on this blog :-)
 </div> </br>
 
+
 <div id="projects-list">
-{% assign project_posts = site.categories.projects | group_by_exp: "post", "post.categories | last" %}
-{% for project in project_posts %}
-  {% assign project_name = project.name | replace: "_", " " | capitalize %}
+  {% for project in site.projects %}
   <div class="project-list">
     <div id="#{{ project.name | slugize }}"></div>
     <h3 class="post-list-heading line-bottom">
-      <a href="{{site.baseurl}}/projects/{{project.name}}/">{{ project_name }}</a>
+      <a href="{{ project.url }}">{{ project.title }}</a>
     </h3>
-    <a name="{{ project.name | slugize }}"></a>
-    <ul class="post-list">
-     {% for post in project.items %}
-     <li>
-       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-       <b>
-         <a href="{{ post.url | relative_url }}">
-           {{ post.title | escape }}
-         </a>
-       </b> - <i>{{ post.date | date: date_format }}</i>
-     </li>
-     {% endfor %}
+    {{ project.content | markdownify }}
+      <ul class="post-list post-list-narrow">
+      {% assign project_category = project.categories | first %}
+      {% for post in site.posts %}
+        {% if post.categories contains project_category %}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <b>
+          <a href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+          </a>
+          </b> - <i>{{ post.date | date: date_format }}</i>
+        </li>
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
