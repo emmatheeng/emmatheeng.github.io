@@ -5,4 +5,4 @@ list_title: "Recent Posts"
 
 Hey you! Welcome to my blog :-)
 
-Here you can find tutorials and infos for a list of projects I'm working on - for example [setting up this blog]({{ "/projects/blog_setup.html" | relative_url }}) using GitHub Pages, Jekyll & Minima.
+I'm Emma, a software engineer working in London. I blog about everything, from personal coding projects, working in tech to female empowerment. Nice to meet you!

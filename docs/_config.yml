@@ -21,6 +21,7 @@ collections:
 
 header_pages:
   - projects/index.html
+  - life/index.html
   - about.html
 
 # Build settings
