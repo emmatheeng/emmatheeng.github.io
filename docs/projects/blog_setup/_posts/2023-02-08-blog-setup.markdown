@@ -43,23 +43,53 @@ As said before I wanted to use this blog as an opportunity to learn new stuff, s
 
 Having the full local setup might seem tedious, but it's going to come in very handy later on once you want to customise and experiment with the different templates. If you want to go with a more lightweight, hands-off blog setup, you can follow templates such as [this one](https://github.com/skills/github-pages) that don't even require a local check-out of your repository.
 
+In any case, after the initial set up you'll end up with a repository structure similar to this one:
+
+```
+├── _includes                     # this is where you'll configure additional plugins for your blog, such as google analytics
+│   ├── google_analytics.html
+│   └── head.html
+├── _layouts                      # this is where you can customise the layout of different parts of your blog
+│   ├── default.html
+│   └── post.html
+├── _posts                        # this where the actual blog posts go
+│   ├── 2023-01-08-hello-world.markdown
+│   └── 2023-02-08-blog-setup.markdown
+├── assets                        # here you can put additional assets (eg images) that should appear on your blog
+│   └── hello_world_image.png
+├── _site                         # jekyll will store the output of the compiled blog site in here
+│   └── [...]
+├── index.html
+├── about.html
+└── _config.yml                   # general configuration of your blog (eg url, plugins)
+
+```
+
 At the end of this step, once you've configured your repository and pushed your initial blogging setup, Github Actions will automatically pick up the changes, generate the website sources and deploy your website to your `github.io` URL!
-
-![The initial Emma the Eng look](/assets/img/projects/blog_setup/initial_style.png)
-
-
-**Yeahi, we're live! :-)**
 
 ### 3. Add Content & Customise your Blog!
 Now that your blog is set up it's time to add some content!
 
-Writing **new blog posts** is fairly straightforward with Jekyll - you just need to add a new file in the format of `<YYY-MM-DD>-<blog_title>.markdown` to your `_posts` directory. The file content has to start with Jekyll frontmatter, the rest of the file will be parsed using markdown. You can check out the [official Jekyll documentation](https://jekyllrb.com/docs/posts/) for details.
+Writing **new blog posts** is fairly straightforward with Jekyll - you just need to add a new file in the format of `<YYY-MM-DD>-<blog_title>.markdown` to your `_posts` directory. The file content has to start with Jekyll frontmatter (*defining the metadata for your post, such as title and date*), the rest of the file will be parsed using markdown. You can check out the [official Jekyll documentation](https://jekyllrb.com/docs/posts/) for details.
 
-In addition to writing posts, you might also want to change the style and format of your blog - for example adjusting the colours and fonts to your personal style, or adding features such as comments or category pages.
+Here is what an example for your first blog post could look like:
+```
+---
+layout: post
+title: "Hello World!"
+date: 2023-01-08
+---
+Hello World!
+
+This is my very first post - I'm currently setting up this blog,
+more content to come soon. Watch this space! :-)
+```
+
+In addition to writing posts, you might also want to change the style and format of your blog - for example adjusting the colours and fonts to your personal style, or adding features such as comments or category pages. Check out some free-to-use, open source Jekyll templates [here](https://jekyllthemes.io/free) and keep an eye out for additional blog posts [here](/projects/blog_setup.html) to learn more about how I customised my own blog.
 
 
 ## Conclusion
-Setting up my Github Pages Jekyll blog was really easy, and seeing my own website hosted on `github.io` after just a couple of minutes of coding felt amazing. The real exciting work however has just started - adjusting my blog's look & feel to my liking and finally producing content.
+Setting up my Github Pages Jekyll blog was really easy, and seeing my own website hosted on [emmatheeng.github.io](emmatheeng.github.io) after just a couple of minutes of coding felt amazing. The real exciting work however has just started - adjusting my blog's look & feel to my liking and finally producing content.
 
 I'm currently writing up my learnings from those next steps - stay tuned!
 
