@@ -160,7 +160,7 @@ layout: default
 
 The relevant bits here are:
 - `<ul class="post-list">`: This is the html list containing one `<li>` item for each blog post in your blog
-- `{%- for post in site.posts -%}`: This is the [Liquid](https://shopify.github.io/liquid/) syntax for an iterator iterating through all posts available on your blog website. In between this and the matching `{%- endfor -%}`, the data for each blog post can be accessed via the `post` variable
+- `{% raw %}{%- for post in site.posts -%}{% endraw %}`: This is the [Liquid](https://shopify.github.io/liquid/) syntax for an iterator iterating through all posts available on your blog website. In between this and the matching `{% raw %}{%- endfor -%}{% endraw %}`, the data for each blog post can be accessed via the `post` variable
 - `<span class="post-meta">`: This is the html tag containing the date of the post. We want to add the post author right next to the date.
 - `post.date`: This is how the date of the post is accessed. The post author can be accessed similarly via `post.author`.
 
