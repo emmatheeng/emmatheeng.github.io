@@ -16,37 +16,7 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        <div class="post-list-item">
-          <div class="post-list-img">
-          {%- if post.image -%}
-            <img src={{post.image}} class="post-list-img"></img>
-          {%- endif -%}
-          </div>
-          <div style="width: 80%">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">
-            {{ post.date | date: date_format }}
-            {%- if post.tags -%}
-                {% for tag in post.tags %}
-                <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
-                    <span>#{{ tag }}</span>
-                </a>
-              {% endfor %}
-            {%- endif -%}
-          </span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          {%- if site.show_excerpts -%}
-            <i>{%- if post.summary -%}
-              {{ post.summary }}
-            {%- else -%}{{ post.excerpt }}
-            {%- endif -%}</i>
-          {%- endif -%}
-          </div>
-        </div>
+        {% include post_preview.html post=post %}
       </li><br/>
       {%- endfor -%}
     </ul>

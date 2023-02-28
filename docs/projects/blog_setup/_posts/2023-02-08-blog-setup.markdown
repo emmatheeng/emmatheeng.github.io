@@ -89,8 +89,6 @@ In addition to writing posts, you might also want to change the style and format
 
 
 ## Conclusion
-Setting up my Github Pages Jekyll blog was really easy, and seeing my own website hosted on [emmatheeng.github.io](emmatheeng.github.io) after just a couple of minutes of coding felt amazing. The real exciting work however has just started - adjusting my blog's look & feel to my liking and finally producing content.
-
-I'm currently writing up my learnings from those next steps - stay tuned!
+Setting up my Github Pages Jekyll blog was really easy, and seeing my own website hosted on [emmatheeng.github.io](emmatheeng.github.io) after just a couple of minutes of coding felt amazing. The real exciting work however has just started - adjusting my blog's look & feel to my liking and finally producing content. Check out the [blog setup project page](/projects/blog_setup/) for more tutorials about setting up and customising your Jekyll blog!
 
 **Let me know in the comments in case there's anything you've learned, missed, or anything additional you'd like to know. I'm looking forward to hearing from you :-)**

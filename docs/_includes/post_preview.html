@@ -1,0 +1,31 @@
+<div class="post-list-item">
+  <div class="post-list-img">
+  {%- if include.post.image -%}
+    <img src={{include.post.image}} class="post-list-img"></img>
+  {%- endif -%}
+  </div>
+  <div class="post-list-text">
+  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+  <span class="post-meta">
+    {{ include.post.date | date: date_format }}
+    {%- if include.post.tags -%}
+        {% for tag in include.post.tags %}
+        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
+            <span>#{{ tag }}</span>
+        </a>
+      {% endfor %}
+    {%- endif -%}
+  </span>
+  <h3>
+    <a class="post-link" href="{{ include.post.url | relative_url }}">
+      {{ include.post.title | escape }}
+    </a>
+  </h3>
+  {%- if site.show_excerpts -%}
+    <i>{%- if include.post.summary -%}
+      {{ include.post.summary }}
+    {%- else -%}{{ include.post.excerpt }}
+    {%- endif -%}</i>
+  {%- endif -%}
+  </div>
+</div>
