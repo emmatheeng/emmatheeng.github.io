@@ -30,18 +30,18 @@ To be able to efficiently develop my own Jekyll blog, I decided to set up the fu
 I'm using [VS Code](https://code.visualstudio.com/) as my editor of choice for making changes to the blog source code.
 
 ### Minima
-Finally, as I'm starting from the existing `minima` theme, it's very helpful to have a local version of the `minima` source code. As `minima` is hosted by GithubPages, you need to check the [GithubPages depencency versions](https://pages.github.com/versions/) to understand which `minima` version to install. 
+Finally, as I'm starting from the existing minima theme, it's very helpful to have a local version of the minima source code. As minima is hosted by GithubPages, you need to check the [GithubPages depencency versions](https://pages.github.com/versions/) to understand which minima version to install. 
 
 <figure>
   <div>
   <img src="{{site.url}}/assets/img/projects/blog_setup/minima_github_pages_version.png" alt="Screenshot of GithubPages version of minima"/>
   </div>
-  <figcaption>{{"Version of `minima` used by GithubPages - in my case it's `v2.5.1`"| markdownify}}</figcaption>
+  <figcaption>{{"Version of minima used by GithubPages - in my case it's `v2.5.1`"| markdownify}}</figcaption>
 </figure>
 
 To setup the local code for the template of your choice:
-1. Check the template version used by GithubPages [here](https://pages.github.com/versions/). For my case, the used `minima` version is `v2.5.1`.
-2. Find the Github repository hosting the theme together with the used commit. For `minima`, the code is in [this repo](https://github.com/jekyll/minima) and the `v2.5.1` release tag is [here](https://github.com/jekyll/minima/releases/tag/v2.5.1).
+1. Check the template version used by GithubPages [here](https://pages.github.com/versions/). For my case, the used minima version is `v2.5.1`.
+2. Find the Github repository hosting the theme together with the used commit. For minima, the code is in [this repo](https://github.com/jekyll/minima) and the `v2.5.1` release tag is [here](https://github.com/jekyll/minima/releases/tag/v2.5.1).
 3. Check out the code to your local machine! You can check out specific git repository tags via `git clone --branch <tag_name> <repo_url>`, so in my case I had to execute `git clone --branch v2.5.1 https://github.com/jekyll/minima.git`
 
 I recommend checking out the original template source code in the same parent folder as your own blog source code - that makes it easier to open both of them at the same time in VS Code.
@@ -66,13 +66,13 @@ blog_development_parent/
 You should be able to locally compile and view your blog code by executing `bundle exec jekyll serve --watch` in `<your_blog>` directory, and then opening `localhost:4000` in a web browser.
 
 ### Example 1: Changing the background colour
-To customise the standard `minima` template we're now going to piece by piece change and overwrite parts of the original `minima` code. 
+To customise the standard minima template we're now going to piece by piece change and overwrite parts of the original minima code. 
 
 One of the first things I wanted to change for my blog was the look and feel. I get that a simple, black and white colour scheme gives a blog a _clean_ feel, but it's also quite boring. So, as first example, we're going to change the background colour of your blog.
 
-In `minima`, the background colour is set in the `minima.scss` file under `minima/_sass/minima.scss`. To adjust it, you need to do the following:
+In minima, the background colour is set in the `minima.scss` file under `minima/_sass/minima.scss`. To adjust it, you need to do the following:
 
-1. Copy the original `minima.scss` file to your blog source code, under the equivalent directory. When compiling your blog source code, Jekyll is now going to use this `minima.scss` file rather than the one coming from the `minima` source code. 
+1. Copy the original `minima.scss` file to your blog source code, under the equivalent directory. When compiling your blog source code, Jekyll is now going to use this `minima.scss` file rather than the one coming from the minima source code. 
 
 Your blog folders should now look similar to this:
 ```
@@ -110,7 +110,7 @@ Here's what the blog `index` page looks like initially:
 </figure>
 You can see that the post preview has the post date on top of the blog post title, but there's no author!
 
-To change this, we first need to understand how the blog preview list is implemented in `minima`. The file determining the code for the `index` site is `index.md`, which in `minima` looks like this:
+To change this, we first need to understand how the blog preview list is implemented in minima. The file determining the code for the `index` site is `index.md`, which in minima looks like this:
 ```
 ---
 layout: home
@@ -118,7 +118,7 @@ layout: home
 ```
 You can see that it uses the `home` layout and doesn't define any additional content.
 
-The `home` layout is defined in `minima` in the `_layouts/home.html` file, which looks like this:
+The `home` layout is defined in minima in the `_layouts/home.html` file, which looks like this:
 ```
 {% raw %}
 ---
@@ -167,7 +167,7 @@ The relevant bits here are:
 
 To add the author to this layout, we again will need to create a version of the `home.html` layout file in your own blog, and then adjust it to include showing the author:
 
-1. Copy the original `home.html` file to your blog source code, under the equivalent directory. When compiling your blog source code, Jekyll is now going to use this `home.html` file rather than the one coming from the `minima` source code. 
+1. Copy the original `home.html` file to your blog source code, under the equivalent directory. When compiling your blog source code, Jekyll is now going to use this `home.html` file rather than the one coming from the minima source code. 
 
 Your blog folders should now look similar to this:
 ```
@@ -194,8 +194,8 @@ Your blog folders should now look similar to this:
 </figure>
 
 ## Conclusion
-In this post I've showed you how I set up my local development environment to customise my Jekyll blog, starting from the `minima` template. We then went over two simple examples, changine the blog style as well as one of the page layouts. 
+In this post I've showed you how I set up my local development environment to customise my Jekyll blog, starting from the minima template. We then went over two simple examples, changine the blog style as well as one of the page layouts. 
 
-The idea of these changes is quite similar - locate the definition of the property in the original `minima` code, make a copy of the file into your own blog code and adjust the relevant parts. And guess what - it stays that simple, even for more advanced changes!
+The idea of these changes is quite similar - locate the definition of the property in the original minima code, make a copy of the file into your own blog code and adjust the relevant parts. And guess what - it stays that simple, even for more advanced changes!
 
 I'll keep adding tutorials to this blog for slightly fancier topics, like adding `categories` and `tags` to posts, or helping google find your blog. **Let me know in the comments if you have any additional questions, or if theres a specific example you'd like to see! :-)**
