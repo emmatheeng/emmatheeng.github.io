@@ -99,18 +99,18 @@ $background-color: #ffce6d !default;
 </figure>
 
 ### Example 2: Showing post author in recent post list
-In this second example, we're going to add the author of each blog post to the previews shown on the blog `index` page. 
+In this second example, we're going to add the author of each blog post to the previews shown on the blog index page. 
 
-Here's what the blog `index` page looks like initially: 
+Here's what the blog index page looks like initially: 
 <figure>
   <div>
   <img src="{{site.url}}/assets/img/projects/blog_setup/emmatheeng_minima_initial_style.png" alt="Screenshot of first blog look using bare minima"/>
   </div>
-  <figcaption>{{"Initial blog `index` page setup."| markdownify}}</figcaption>
+  <figcaption>{{"Initial blog index page setup."| markdownify}}</figcaption>
 </figure>
 You can see that the post preview has the post date on top of the blog post title, but there's no author!
 
-To change this, we first need to understand how the blog preview list is implemented in minima. The file determining the code for the `index` site is `index.md`, which in minima looks like this:
+To change this, we first need to understand how the blog preview list is implemented in minima. The file determining the code for the index site is `index.md`, which in minima looks like this:
 ```
 ---
 layout: home
@@ -194,7 +194,7 @@ Your blog folders should now look similar to this:
 </figure>
 
 ## Conclusion
-In this post I've showed you how I set up my local development environment to customise my Jekyll blog, starting from the minima template. We then went over two simple examples, changine the blog style as well as one of the page layouts. 
+In this post I've shown you how I set up my local development environment to customise my Jekyll blog, starting from the minima template. We then went over two simple examples, changine the blog style as well as one of the page layouts. 
 
 The idea of these changes is quite similar - locate the definition of the property in the original minima code, make a copy of the file into your own blog code and adjust the relevant parts. And guess what - it stays that simple, even for more advanced changes!
 

@@ -1,0 +1,131 @@
+---
+layout: post
+title: "Adding Tags to my Jekyll Blog"
+tags: github_pages jekyll minima liquid
+image: /assets/img/projects/blog_setup/blog_setup_tags_categories_title.png
+comments: true
+summary: "Post tags and categories make it easier to navigate through your blog and find relevant posts! In this post I'm explaining how to connect Jekyll blog posts using post tags."
+---
+I recently set up this blog using Jekyll, GithubPages and Minima (*if you want to learn more about why and how, check out the first parts of this series [here](/projects/blog_setup.html)!*). Once I had a couple of posts on my blog, I realised I wanted to **organise** my posts better - into different series and technology groups. I wanted to make it _as easy as possible_ for someone reading my post about [customising the minima Jekyll template](/projects/blog_setup/blog-styling.html) to find other posts about working with Jekyll, or using HTML/CSS to customise web frontend.
+
+After doing some research, I discovered two ways of doing this:
+1. **Tags**: [Jekyll Tags](https://jekyllrb.com/docs/posts/#tags) are one or more attributes set for a given post. Tags can be added to Jekyll posts using the frontmatter keys `tag` or `tags`.
+2. **Categories**: [Jekyll Categories](https://jekyllrb.com/docs/posts/#categories) are similar to tags and can be set in frontmatter using keys `category` or `categories`. Other than tags however they work "more hierarchical" - if a post is in a directory other than `_posts`, every directory will be treated as another post category.
+
+This is part (1) of two posts, focusing on organising blog posts using tags. 
+
+## What are Post Tags?
+[Jekyll Tags](https://jekyllrb.com/docs/posts/#tags) are a way of _tagging_ blog posts with the most relevant topics that post is about. A post can have a list of tags, and they all have the same "priority" - there's no stacking or hierarchy of tags. 
+
+Tags can be usefull for connecting posts that usually wouldn't be connected. As an example, if I have two blog posts about different projects, but in both of those blog posts I'm writing about working with HTML and CSS, a tag [#html_css](https://emmatheeng.github.io/archive.html#html_css) could be a good way to connect the two.
+
+## Implementation
+To implement tags on my blogs, and make posts searchable through those tags, I need to implement two things:
+- **adding tags to the post** itself and showing them on the post page
+- allowing readers to **find other posts** that have that same tag
+
+### Adding Tags to Posts
+Let's start by adding tags to a given post. To do this, I'm using the frontmatter keys `tag` for a single tag, or `tags` for a list of tags. 
+
+Here's what setting a "#hello" tag for a given post can look like:
+```
+---
+layout: post
+title: "Hello World!"
+tags: hello 
+---
+Hello World!
+
+This post has a Tag :-)
+```
+
+The next step is to actually show that tag on the post website. To do that, we need to go into the layout file used by posts - `post.html` in my case.
+
+In `post.hmtl`, at the place where you want the blog tags to show up, you can add this liquid code:
+```
+{% raw %}
+{%- if page.tags -%}
+    {% for tag in page.tags %}
+        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
+            #{{ tag }}
+        </a>
+    {% endfor %}
+{%- endif -%}
+{% endraw %}
+```
+
+What this code does is:
+- it **iterates** through all tags stored on the post element that is currently shown
+- for every tag, it **prints** a "#" symbol as well as the tag name 
+- additionally, it **links** every tag to `<your_blog_url>/archive.html#<your_tag_name>`. I'll show you how this archive page is implemented in the next section!
+
+Here's how the tags shown on a "Hello World" post looks like:
+<figure>
+  <div>
+  <img src="{{site.url}}/assets/img/projects/blog_setup/emmatheeng_tags_post.png" alt="Screenshot of Minima blog showing blog tags on a post"/>
+  </div>
+  <figcaption>{{"Here's how the `#hello` tag I added to the post shows up on the website!"| markdownify}}</figcaption>
+</figure>
+
+### Post Tag Archive
+Now that the posts on my blogs have tags, I also want readers to be able to search through them and discover posts through the same tag!
+
+In the previous step, I already added a link to `<your_blog_url>/archive.html#<your_tag_name>`. This page on my blog should **list all tags** used on my blog, show all **posts with that tag**, and allow **anchoring** and linking to a specific tag name.
+
+Here's what my `archive.html` looks like:
+```
+{% raw %}
+---
+layout: page
+title: "Post Archive"
+permalink: /archive.html
+---
+<div>
+  Search through all of my posts by tag!
+</div> </br>
+
+<div id="tags-list">
+{% for tag in site.tags %}
+  {% assign tag_name = tag | first %}
+  {% assign tag_name_pretty = tag_name | replace: "_", " " | capitalize %}
+  <div class="tag-list">
+    <div id="#{{ tag_name | slugize }}"></div>
+    <h3 class="post-list-heading line-bottom"> In #{{ tag_name }}: </h3>
+    <a name="{{ tag_name | slugize }}"></a>
+    <ul class="post-list post-list-narrow">
+     {% for post in site.tags[tag_name] %}
+     <li>
+       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+       <b>
+         <a href="{{ post.url | relative_url }}">
+           {{ post.title | escape }}
+         </a>
+       </b> - <i>{{ post.date | date: date_format }}</i>
+     </li>
+     {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+</div>
+{% endraw %}
+```
+
+This code snippet does the following: 
+- it **iterates** over all tags used across my blog
+- for every tag, it then prints the **tag name** (_in a prettified version_) and adds a link to allow anchoring to that tag name
+- it then iterates through all **posts with that tag** and prints information (like post title and date) for each post
+
+Here's what the tag archive page looks like in action:
+<figure>
+  <div>
+  <img src="{{site.url}}/assets/img/projects/blog_setup/emmatheeng_tags_archive.png" alt="Screenshot of Minima blog showing blog tag archive"/>
+  </div>
+  <figcaption>{{"This is the post archive, listing posts by tag"| markdownify}}</figcaption>
+</figure>
+
+## Conclusion
+Tags can be a handy tool to connect blog post and help readers navigate through your blog. In this post I've explained how to add tags to Jekyll blog posts, and how to make posts searchable through those tags. 
+
+Stay tuned for part two of this topic, where I'm going to explain how to use **categories** for a different level of structure in your posts!
+
+How are you organising your Jekyll blog? Are you using tags? Categories? Something else? **Let me know in the comments :-)**
