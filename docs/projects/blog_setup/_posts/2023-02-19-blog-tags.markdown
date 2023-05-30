@@ -12,15 +12,15 @@ After doing some research, I discovered two ways of doing this:
 1. **Tags**: [Jekyll Tags](https://jekyllrb.com/docs/posts/#tags) are one or more attributes set for a given post. Tags can be added to Jekyll posts using the frontmatter keys `tag` or `tags`.
 2. **Categories**: [Jekyll Categories](https://jekyllrb.com/docs/posts/#categories) are similar to tags and can be set in frontmatter using keys `category` or `categories`. Other than tags however they work "more hierarchical" - if a post is in a directory other than `_posts`, every directory will be treated as another post category.
 
-This is part (1) of two posts, focusing on organising blog posts using tags. 
+This is part (1) of two posts, focusing on organising blog posts using tags. Check out the [part (2)](/projects/blog_setup/blog-categories.html) if you want to learn more about categories! 
 
 ## What are Post Tags?
 [Jekyll Tags](https://jekyllrb.com/docs/posts/#tags) are a way of _tagging_ blog posts with the most relevant topics that post is about. A post can have a list of tags, and they all have the same "priority" - there's no stacking or hierarchy of tags. 
 
-Tags can be usefull for connecting posts that usually wouldn't be connected. As an example, if I have two blog posts about different projects, but in both of those blog posts I'm writing about working with HTML and CSS, a tag [#html_css](https://emmatheeng.github.io/archive.html#html_css) could be a good way to connect the two.
+Tags can be usefull for connecting posts that usually wouldn't be connected. As an example, if I have two blog posts about different projects, but in both of those blog posts I'm writing about working with HTML and CSS, a tag [#html_css](/archive.html#html_css) could be a good way to connect the two.
 
 ## Implementation
-To implement tags on my blogs, and make posts searchable through those tags, I need to implement two things:
+To implement tags on my blog posts, and make posts searchable through those tags, I need to implement two things:
 - **adding tags to the post** itself and showing them on the post page
 - allowing readers to **find other posts** that have that same tag
 
@@ -126,6 +126,6 @@ Here's what the tag archive page looks like in action:
 ## Conclusion
 Tags can be a handy tool to connect blog post and help readers navigate through your blog. In this post I've explained how to add tags to Jekyll blog posts, and how to make posts searchable through those tags. 
 
-Stay tuned for part two of this topic, where I'm going to explain how to use **categories** for a different level of structure in your posts!
+Check out [part two](/projects/blog_setup/blog-categories.html) of this topic, where I'm going to explain how to use **categories** for a different level of structure in your posts!
 
 How are you organising your Jekyll blog? Are you using tags? Categories? Something else? **Let me know in the comments :-)**
