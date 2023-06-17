@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Customising & styling my Jekyll Blog"
+title: "Customising & Styling my Jekyll Blog"
 tags: github_pages jekyll minima html_css
 image: /assets/img/projects/blog_setup/blog_setup_style_title.png
 comments: true

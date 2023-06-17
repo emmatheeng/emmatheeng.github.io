@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Adding Categories to my Jekyll Blog"
+title: "Organising my Jekyll Blog with Categories"
 tags: github_pages jekyll minima liquid
 image: /assets/img/projects/blog_setup/blog_setup_tags_categories_title.png
 comments: true
