@@ -155,3 +155,17 @@
     }
   }
 }
+
+.post-toc {
+  border-top: dotted thin;
+  border-bottom: dotted thin;
+  border-color: $grey-color-light;
+  margin-bottom: $spacing-unit;
+  h4 {
+    margin-bottom: 0;
+  }
+  ul {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}

@@ -24,6 +24,10 @@ header_pages:
   - life/index.html
   - about.html
 
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 # Build settings
 theme: minima
 plugins:

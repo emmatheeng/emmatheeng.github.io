@@ -29,6 +29,9 @@ layout: default
         {% endfor %}
       {%- endif -%}
     </p>
+    {%- if page.summary -%}
+      <em>{{ page.summary }}</em>
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

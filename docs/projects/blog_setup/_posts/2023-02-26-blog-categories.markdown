@@ -6,6 +6,9 @@ image: /assets/img/projects/blog_setup/blog_setup_tags_categories_title.png
 comments: true
 summary: "Post tags and categories make it easier to navigate through your blog and find relevant posts! In this post I'm explaining how to structure Jekyll blog posts using post categories."
 ---
+
+{% include toc.html %}
+
 I recently set up this blog using Jekyll, GithubPages and Minima (*if you want to learn more about why and how, check out the first parts of this series [here](/projects/blog_setup.html)!*). Once I had a couple of posts on my blog, I realised I wanted to **organise** my posts better - into different series and technology groups. I wanted to make it _as easy as possible_ for someone reading my post about [customising the minima Jekyll template](/projects/blog_setup/blog-styling.html) to find other posts about working with Jekyll, or using HTML/CSS to customise web frontend.
 
 After doing some research, I discovered two ways of doing this:

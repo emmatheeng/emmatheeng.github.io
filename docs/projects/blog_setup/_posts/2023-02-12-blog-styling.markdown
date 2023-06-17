@@ -6,6 +6,9 @@ image: /assets/img/projects/blog_setup/blog_setup_style_title.png
 comments: true
 summary: "After setting up my own blog with Jekyll and GithubPages, it's time to customise the standard Minima blog template. This posts shows my local development blog setup, and how you can use it to customise your own Jekyll blog."
 ---
+
+{% include toc.html %}
+
 I recently decided to start a blog - and host it on GithubPages using Jekyll (*if you want to learn more about GithubPages and Jekyll, as well I why I decided to use it for blogging, check out the first part of this series [here](/projects/blog_setup/blog-setup.html)*).
 
 I started my blog using the Jekyll template [minima](https://github.com/jekyll/minima). The reason for that come back to simplicity: minima is one of the themes that's [supported by GithubPages](https://pages.github.com/themes/) out of the box, it's very simple to understand and it's easy to customise. Using minima however also meant that **my blog initially _looked_ very... basic**.

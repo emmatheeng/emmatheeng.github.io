@@ -6,6 +6,9 @@ image: /assets/img/projects/blog_setup/blog_setup_initial_title.png
 comments: true
 summary: "Having my own blog is something I've always been very excited about. In this post I'm sharing why I decided to host my blog using Github Pages and Jekyll, and how you too can set up your own (free!) blog with those tools."
 ---
+
+{% include toc.html %}
+
 I always wanted to have a blog - being able to share insights I gained during projects, tutorials for setting up my tech or even general learnings from my daily work life is something I've always been excited about.
 
 When I finally decided to get started and set up a blog, I was overwhelmed with the many options there are. Sure, there's the obvious, big blogging providers such as [WordPress](https://wordpress.com/) or [SquareSpace](https://www.squarespace.com/) - but all of those come with limitations, and I definitely wasn't ready to pay the full "expert subscription fee" for those providers just yet.
